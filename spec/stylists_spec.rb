@@ -24,21 +24,33 @@ describe(Stylist) do
   end
 
   describe("#id") do
-  it("sets an ID when you save it") do
-    stylist = Stylist.new({:name => "Bob", :id => nil})
-    stylist.save()
-    expect(stylist.id()).to(be_an_instance_of(Fixnum))
+    it("sets an ID when you save it") do
+      stylist = Stylist.new({:name => "Bob", :id => nil})
+      stylist.save()
+      expect(stylist.id()).to(be_an_instance_of(Fixnum))
+    end
   end
-end
 
-describe(".find") do
-  it("returns a stylist by his/her ID") do
-    test_stylist = Stylist.new({:name => "Bob", :id => nil})
-    test_stylist.save()
-    test_stylist2 = Stylist.new({:name => "Jack", :id => nil})
-    test_stylist2.save()
-    expect(Stylist.find(test_stylist2.id())).to(eq(test_stylist2))
+  describe(".find") do
+    it("returns a stylist by his/her ID") do
+      test_stylist = Stylist.new({:name => "Bob", :id => nil})
+      test_stylist.save()
+      test_stylist2 = Stylist.new({:name => "Jack", :id => nil})
+      test_stylist2.save()
+      expect(Stylist.find(test_stylist2.id())).to(eq(test_stylist2))
+    end
   end
-end
+
+  describe("#client_list") do
+   it("returns an array of clients for that stylist") do
+     test_stylist = Stylist.new({:name => "Bob", :id => nil})
+     test_stylist.save()
+     test_client = Client.new({:name => "Dylan", :stylist_id => test_stylist.id()})
+     test_client.save()
+     test_client2 = Client.new({:name => "Johnny", :stylist_id => test_stylist.id()})
+     test_client2.save()
+     expect(test_stylist.client_list()).to(eq([test_client, test_client2]))
+   end
+ end
 
 end
