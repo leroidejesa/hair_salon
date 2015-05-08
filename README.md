@@ -3,7 +3,7 @@ by leroi dejesa<br>
 copyright 2015, all rights reserved<br>
 license: MIT<br>
 <br>
-HEROKU: https://glacial-castle-4470.herokuapp.com/<br>
+HEROKU:<br>
 <br>
 DESCRIPTION: it's a hair salon management system that lets you view, edit, and/or delete stylists and their respective clients.<br><br>
 SETUP INSTRUCTIONS
