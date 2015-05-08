@@ -69,7 +69,6 @@ describe(Stylist) do
      test_stylist2 = Stylist.new({:name => "Jane", :id => nil})
      test_stylist2.save()
      test_stylist.delete()
-#can't figure out why this spec isn't passing! :(
      expect(Stylist.all()).to(eq([test_stylist2]))
    end
  end
