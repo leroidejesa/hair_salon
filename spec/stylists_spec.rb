@@ -69,17 +69,9 @@ describe(Stylist) do
      test_stylist2 = Stylist.new({:name => "Jane", :id => nil})
      test_stylist2.save()
      test_stylist.delete()
+#can't figure out why this spec isn't passing! :(
      expect(Stylist.all()).to(eq([test_stylist2]))
    end
  end
-
- # it("lets you add a client to a stylist") do
- #    test_client = Client.new ({:name => "Jane", :id => nil})
- #    test_client.save()
- #    test_stylist = Stylist.new({:name => "Tarzan", :id => nil})
- #    test_stylist.save()
- #    test_client.update({:stylist_ids => [test_stylist.id()]})
- #    expect(test_stylist.clients()).to(eq([test_client]))
- #  end
 
 end

@@ -29,7 +29,7 @@ class Client
 
   define_method(:update) do |attributes|
     @name = attributes.fetch(:name)
-    @id = self.id()
+    @id = self.id().to_i()
     DB.exec("UPDATE clients SET name = '#{@name}' WHERE id = #{@id};")
   end
 
