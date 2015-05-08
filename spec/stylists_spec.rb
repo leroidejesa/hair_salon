@@ -23,4 +23,22 @@ describe(Stylist) do
     end
   end
 
+  describe("#id") do
+  it("sets an ID when you save it") do
+    stylist = Stylist.new({:name => "Bob", :id => nil})
+    stylist.save()
+    expect(stylist.id()).to(be_an_instance_of(Fixnum))
+  end
+end
+
+describe(".find") do
+  it("returns a stylist by his/her ID") do
+    test_stylist = Stylist.new({:name => "Bob", :id => nil})
+    test_stylist.save()
+    test_stylist2 = Stylist.new({:name => "Jack", :id => nil})
+    test_stylist2.save()
+    expect(Stylist.find(test_stylist2.id())).to(eq(test_stylist2))
+  end
+end
+
 end
