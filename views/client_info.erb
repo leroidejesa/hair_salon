@@ -6,8 +6,10 @@
   <input id="name" name="name" type="text">
   <button type="submit">UPDATE</button>
 </form>
-
+<br><br>
 <form action="/client/<%= @client.id() %>" method="post">
   <input name="_method" type = "hidden" value="delete">
-  <button type="submit">DELETE</button>
+  <button type="submit">DELETE CLIENT</button>
 </form>
+<br><br>
+<a href="/">HOME</a>
