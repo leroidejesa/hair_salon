@@ -42,3 +42,7 @@ describe('path to update stylist', {:type => :feature}) do
     expect(page).to have_content('CHANGES SAVED!')
   end
 end
+
+#add client
+
+#delete client

@@ -14,9 +14,31 @@
   <input name="_method" type = "hidden" value="delete">
   <button type="submit">TERMINATE</button>
 </form>
+<br>
+<br>
+<h4>CLIENT LIST</h4>
+<% if @stylist.client_list().any?() %>
 
-<br>
-<br>
+<ul>
+  <% @stylist.client_list().each() do |client| %>
+  <li><a href="/clients/<%= client.id() %>"><%= client.name() %></a></li>
+  <% end %>
+</ul>
+
+<% else %>
+<p>n/a</p>
+<% end %>
+
+
+<h6>ADD A CLIENT:</h6>
+<form action="/clients" method="post">
+  <input id="stylist_id" name="stylist_id" type="hidden" value="<%= @stylist.id() %>">
+
+  <label for="name">NAME:</label>
+  <input id="name" name="name" type="text">
+  <button type="submit">ADD</button>
+</form>
+
 <br>
 <br>
 <a href="/">HOME</a>

@@ -1,24 +1,19 @@
-<h1>SALON MANAGEMENT SYSTEM</h1>
+<h1>SALON MANAGEMENT SYSTEM version 0.1.7</h1>
 
-<h4>LIST OF STYLISTS (and respective clients):</h4>
-
-#stylist list (clickable links to stylist info page, where owner can view/add/update/delete stylist)
-
+<h5>
   <% if @stylists.any?() %>
+  <h4>(click on a stylist below to view profile and respective clients):</h4>
   <ul>
     <% @stylists.each do |stylist| %>
-    <li><a href="/stylists/<%= stylist.id() %>"><%= stylist.name() %></a></li>
+    <li><a href="/stylists/<%= stylist.id() %>"><%= stylist.name() %></a>
+
+    </li>
     <% end %>
   </ul>
+</h5>
   <% else %>
   <p>(no stylists to view)</p>
   <% end %>
 
 <br>
-#under each stylist will be a list of their clients (each a clickable link where ownere can view/add/update/delete)
-<br>
-<br>
-<br>
 <a href="/stylists/new">ADD A STYLIST</a>
-<br>
-#ADD A CLIENT

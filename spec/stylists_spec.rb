@@ -45,9 +45,9 @@ describe(Stylist) do
    it("returns an array of clients for that stylist") do
      test_stylist = Stylist.new({:name => "Bob", :id => nil})
      test_stylist.save()
-     test_client = Client.new({:name => "Dylan", :stylist_id => test_stylist.id()})
+     test_client = Client.new({:name => "Dylan", :id => nil, :stylist_id => test_stylist.id()})
      test_client.save()
-     test_client2 = Client.new({:name => "Johnny", :stylist_id => test_stylist.id()})
+     test_client2 = Client.new({:name => "Johnny", :id => nil, :stylist_id => test_stylist.id()})
      test_client2.save()
      expect(test_stylist.client_list()).to(eq([test_client, test_client2]))
    end
@@ -72,5 +72,14 @@ describe(Stylist) do
      expect(Stylist.all()).to(eq([test_stylist2]))
    end
  end
+
+ # it("lets you add a client to a stylist") do
+ #    test_client = Client.new ({:name => "Jane", :id => nil})
+ #    test_client.save()
+ #    test_stylist = Stylist.new({:name => "Tarzan", :id => nil})
+ #    test_stylist.save()
+ #    test_client.update({:stylist_ids => [test_stylist.id()]})
+ #    expect(test_stylist.clients()).to(eq([test_client]))
+ #  end
 
 end
