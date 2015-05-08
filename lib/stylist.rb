@@ -44,8 +44,8 @@ class Stylist
       name = client.fetch("name")
       stylist_id = client.fetch("stylist_id").to_i()
       stylist_clients.push(Client.new({:name => name, :stylist_id => stylist_id}))
-     end
-     stylist_clients
+    end
+    stylist_clients
   end
 
 end
