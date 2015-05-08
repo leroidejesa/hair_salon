@@ -14,7 +14,6 @@ get('/') do
 end
 
 get('/stylists/new') do
-  #add a stylist
   erb(:stylist_form)
 end
 
@@ -26,7 +25,6 @@ post('/stylists') do
 end
 
 get('/stylists/:id') do
-  #page where owner views/updates/deletes SPECIFIC stylist
   @stylist = Stylist.find(params.fetch("id").to_i())
   @hire_date = [rand(12), rand(28), 10.+(rand(5))].join("-")
   @hours = 15.+(rand(25))
