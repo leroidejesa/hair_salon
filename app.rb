@@ -39,3 +39,9 @@ patch("/edit_stylist/:id") do
   @stylist.update({:name => stylist_name})
   erb(:success)
 end
+
+delete("/stylists/:id") do
+  stylist = Stylist.find(params.fetch("id").to_i())
+  stylist.delete()
+  erb(:success)
+end

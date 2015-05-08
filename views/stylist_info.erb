@@ -1,17 +1,22 @@
 <h1>STYLIST: "<%= @stylist.name() %>"</h1>
-<h3>HIRE DATE:</h3><h4> <%= @hire_date %></h4>
-<h3>HOURS THIS WEEK:</h3><h4> <%= @hours %></h4>
 
-<br>
-<br>
-<p><form action="/edit_stylist/<%= @stylist.id() %>" method="post">
+<form action="/edit_stylist/<%= @stylist.id() %>" method="post">
   <input name="_method" type="hidden" value="patch">
-  <label for="name">CHANGE PROFILE NAME:</label>
-  <br>
+  <label for="name">change profile name:</label>
   <input id="name" name="name" type="text">
   <button type="submit">UPDATE</button>
-</form></p>
+</form>
+<br>
+<h3>HIRE DATE:</h3><h4> <%= @hire_date %></h4>
+<h3>HOURS THIS WEEK:</h3><h4> <%= @hours %></h4>
+<br>
+<form action="/stylists/<%= @stylist.id() %>" method="post">
+  <input name="_method" type = "hidden" value="delete">
+  <button type="submit">TERMINATE</button>
+</form>
 
-
-
-<a href="/">Return to Main Page</a>
+<br>
+<br>
+<br>
+<br>
+<a href="/">HOME</a>
