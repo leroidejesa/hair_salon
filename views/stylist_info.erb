@@ -1,7 +1,13 @@
-<h1>PROFILE FOR: "<%= @stylist.name() %>"</h1>
+<h1>STYLIST: "<%= @stylist.name() %>"</h1>
+<h3>HIRE DATE:</h3><h4> <%= @hire_date %></h4>
+<h3>HOURS THIS WEEK:</h3><h4> <%= @hours %></h4>
+
+<br>
+<br>
 <p><form action="/edit_stylist/<%= @stylist.id() %>" method="post">
   <input name="_method" type="hidden" value="patch">
-  <label for="name">CHANGE NAME:</label>
+  <label for="name">CHANGE PROFILE NAME:</label>
+  <br>
   <input id="name" name="name" type="text">
   <button type="submit">UPDATE</button>
 </form></p>

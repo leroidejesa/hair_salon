@@ -28,6 +28,8 @@ end
 get('/stylists/:id') do
   #page where owner views/updates/deletes SPECIFIC stylist
   @stylist = Stylist.find(params.fetch("id").to_i())
+  @hire_date = [rand(12), rand(28), 10.+(rand(5))].join("-")
+  @hours = 15.+(rand(25))
   erb(:stylist_info)
 end
 

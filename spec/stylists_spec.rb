@@ -58,7 +58,7 @@ describe(Stylist) do
       stylist = Stylist.new({:name => "Jefferson", :id => nil})
       stylist.save()
       stylist.update({:name => "Jefferson"})
-      expect(list.name()).to(eq("Jefferson"))
+      expect(stylist.name()).to(eq("Jefferson"))
     end
   end
 
